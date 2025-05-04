@@ -1,9 +1,9 @@
 import { INITIAL_CARD_PASSWORD } from "./constants";
 import { getCardPasswordError } from "./utils";
-import useCardSingleInput from "../../../hooks/useCardSingleInput";
+import useSingleInput from "../../../hooks/useSingleInput";
 
 const useCardPassword = () => {
-  const { inputState, handleInputChange, errorState } = useCardSingleInput({
+  const { inputState, handleInputChange, errorState } = useSingleInput({
     initialValue: INITIAL_CARD_PASSWORD,
     maxLength: 2,
     getErrorFn: getCardPasswordError,

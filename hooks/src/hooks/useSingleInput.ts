@@ -7,7 +7,7 @@ interface UseInputStateParams {
   getErrorFn: (value: string) => ErrorState;
 }
 
-const useCardSingleInput = ({
+const useSingleInput = ({
   initialValue,
   maxLength,
   getErrorFn,
@@ -32,4 +32,4 @@ const useCardSingleInput = ({
   };
 };
 
-export default useCardSingleInput;
+export default useSingleInput;
