@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 import * as S from "./Modal.styled";
 import CloseIcon from "@assets/close.svg";
-import useOutsideClick from "../../hooks/useOutsideClick";
+import useOutsideClickRef from "../../hooks/useOutsideClickRef";
 import useKeyDown from "@/hooks/useKeyDown";
 
 export type ModalPositionType = "center" | "bottom";
@@ -17,7 +17,7 @@ function Modal({
   children,
   position = "bottom",
 }: PropsWithChildren<ModalProps>) {
-  const modalRef = useOutsideClick<HTMLDivElement>(() => onRequestClose());
+  const modalRef = useOutsideClickRef<HTMLDivElement>(() => onRequestClose());
   useKeyDown({ keys: ["Escape"], callback: () => onRequestClose() });
 
   return (
